@@ -1,5 +1,0 @@
-npm init
-para instalar o package.json
-
-npm install express mysql cors
-para instalar o node_modules

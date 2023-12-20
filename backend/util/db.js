@@ -8,7 +8,7 @@ const configConexao = {
   host: 'localhost',
   user: 'root',
   password: senhaBanco,
-  database: 'banco_tarefas'
+  database: 'autoriaweb'
 };
 
 // Cria a conexão com o banco de dados.
