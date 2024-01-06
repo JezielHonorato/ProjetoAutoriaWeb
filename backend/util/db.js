@@ -8,7 +8,7 @@ const configConexao = {
   host: 'localhost',
   user: 'root',
   password: senhaBanco,
-  database: 'autoriaweb'
+  database: 'jezias'
 };
 
 // Cria a conexão com o banco de dados.

@@ -18,7 +18,7 @@ async function cadastrarAutor(event) {
   event.preventDefault();
   const nomeValor = document.getElementById("autor_formulario").value;
   const nascimentoValor = document.getElementById("autor_nascimento_formulario").value;
-  const nacionalidadeoValor = document.getElementById("autor_nacionalidade_formulario").value;
+  const nacionalidadeValor = document.getElementById("autor_nacionalidade_formulario").value;
   const novoAutor = { nome: nomeValor, nascimento: nascimentoValor, nacionalidade: nacionalidadeValor };
 
   try {
@@ -135,11 +135,10 @@ async function buscarAutor(id) {
  */
 async function atualizarAutor(event) {
   event.preventDefault();
-  const idValor = document.getElementById("autor_id_formulario").value;
   const nomeValor = document.getElementById("autor_formulario").value;
   const nacionalidadeValor = document.getElementById("autor_nacionalidade_formulario").value;
   const nascimentoValor = document.getElementById("autor_nascimento_formulario").value;
-  const autor = {id: idValor, autor: nomeValor, nacionalidade: nacionalidadeValor, nascimento: nascimentoValor, };
+  const autor = {autor: nomeValor, nacionalidade: nacionalidadeValor, nascimento: nascimentoValor, };
 
   try {
     const response = await fetch(`${API_BASE_URL}/autores`, {

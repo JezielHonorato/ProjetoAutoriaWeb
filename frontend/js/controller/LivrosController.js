@@ -135,11 +135,10 @@ async function buscarLivro(id) {
  */
 async function atualizarLivro(event) {
   event.preventDefault();
-  const idValor = document.getElementById("livro_id_formulario").value;
   const tituloValor = document.getElementById("livro_titulo_formulario").value;
   const publicadoValor = document.getElementById("livro_publicado_formulario").value;
   const autorValor = document.getElementById("livro_autor_formulario").value;
-  const livro = {id: idValor, titulo: tituloValor, publicado: publicadoValor, autor: autorValor, };
+  const livro = {titulo: tituloValor, publicado: publicadoValor, autor: autorValor, };
 
   try {
     const response = await fetch(`${API_BASE_URL}/livros`, {

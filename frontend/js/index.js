@@ -1,5 +1,5 @@
-import livroController from "../js/controller/livroController.js";
-import autorController from "../js/controller/autorController.js";
+import livroController from "../js/controller/LivrosController.js";
+import autorController from "../js/controller/AutoresController.js";
 import loginController from "../js/controller/LoginController.js";
 
 // Função auxiliar para selecionar elementos no DOM.

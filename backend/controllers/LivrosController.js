@@ -30,8 +30,8 @@ router.get("/:id", (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { nome, autor, publicado } = req.body;
-  executarComandoSQL('INSERT INTO livros (titulo, autor, publicado) VALUES (?, ?, ?, ?)', [nome, autor, publicado], res, "Erro no cadastro de livros!");
+  const { titulo, autor, publicado } = req.body;
+  executarComandoSQL('INSERT INTO livros (titulo, autor, publicado) VALUES (?, ?, ?)', [titulo, autor, publicado], res, "Erro no cadastro de livros!");
 });
 
 router.delete("/:id", (req, res) => {
@@ -40,8 +40,8 @@ router.delete("/:id", (req, res) => {
 });
 
 router.put('/', (req, res) => {
-  const { id, nome, autor, publicado } = req.body;
-  executarComandoSQL('UPDATE livros SET titulo = ?, autor = ?, publicado = ? WHERE id = ?', [nome, autor, publicado, id], res, "Erro ao atualizar livros");
+  const { id, titulo, autor, publicado } = req.body;
+  executarComandoSQL('UPDATE livros SET titulo = ?, autor = ?, publicado = ? WHERE id = ?', [titulo, autor, publicado, id], res, "Erro ao atualizar livros");
 });
 
 module.exports = router;

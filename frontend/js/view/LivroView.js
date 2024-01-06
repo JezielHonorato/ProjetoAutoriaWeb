@@ -6,16 +6,16 @@ function renderizarFormulario() {
   return `
           <form class="mt-3" id="formulario_livro">
               <div class="form-group">
-                  <label for="livro_titulo">Título do Livro:</label>
-                  <input type="text" class="form-control" id="livro_titulo_formulario">
+                  <label for="titulo">Título do Livro:</label>
+                  <input type="text" class="form-control" id="titulo">
               </div>
               <div class="form-group">
-                  <label for="livro_autor">Autor:</label>
-                  <textarea class="form-control" id="livro_autor_formulario"></textarea>
+                  <label for="autor">Autor:</label>
+                  <textarea class="form-control" id="autor"></textarea>
               </div>
               <div class="form-group">
-                  <label for="livro_publicado">Ano de Publicação:</label>
-                  <textarea class="form-control" id="livro_publicado_formulario"></textarea>
+                  <label for="publicado">Ano de Publicação:</label>
+                  <textarea class="form-control" id="publicado"></textarea>
               </div>
               <button type="submit" class="btn btn-primary mt-2">Salvar</button>
           </form>
@@ -32,16 +32,16 @@ function renderizarFormularioAtualizar(livro) {
             <form class="mt-3" id="formulario_livro_atualizar">
                 <input type="hidden" class="form-control" id="livro_id_formulario" value="${livro.id}">
                 <div class="form-group">
-                    <label for="livro_titulo">Título do livro:</label>
-                    <input type="text" class="form-control" id="livro_titulo_formulario" value="${livro.titulo}">
+                    <label for="titulo">Título do livro:</label>
+                    <input type="text" class="form-control" id="titulo" value="${livro.titulo}">
                 </div>
                 <div class="form-group">
-                    <label for="livro_autor">Autor do Livro:</label>
-                    <textarea class="form-control" id="livro_autor_formulario">${livro.autor}</textarea>
+                    <label for="autor">Autor do Livro:</label>
+                    <textarea class="form-control" id="autor">${livro.autor}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="livro_publicado">Ano de Publicação:</label>
-                    <textarea class="form-control" id="livro_publicado_formulario">${livro.publicado}</textarea>
+                    <label for="publicado">Ano de Publicação:</label>
+                    <textarea class="form-control" id="publicado">${livro.publicado}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Salvar</button>
             </form>

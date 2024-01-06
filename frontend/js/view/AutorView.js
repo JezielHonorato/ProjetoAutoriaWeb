@@ -32,16 +32,16 @@ function renderizarFormulario() {
               <form class="mt-3" id="formulario_autor_atualizar">
                   <input type="hidden" class="form-control" id="autor_id_formulario" value="${autor.id}">
                   <div class="form-group">
-                      <label for="autor_nome">Nome do usuário:</label>
-                      <input type="text" class="form-control" id="autor_formulario" value="${autor.autor}">
+                      <label for="autor">Nome do usuário:</label>
+                      <input type="text" class="form-control" id="autor" value="${autor.autor}">
                   </div>
                   <div class="form-group">
-                      <label for="autor_nascimento">Data de nascimento:</label>
-                      <textarea class="form-control" id="autor_nascimento_formulario">${autor.nascimento}</textarea>
+                      <label for="nascimento">Data de nascimento:</label>
+                      <textarea class="form-control" id="nascimento">${autor.nascimento}</textarea>
                   </div>
                   <div class="form-group">
-                      <label for="autor_nacionalidade">Gênero:</label>
-                      <textarea class="form-control" id="autor_nacionalidade_formulario">${autor.nacionalidade}</textarea>
+                      <label for="nacionalidade">Gênero:</label>
+                      <textarea class="form-control" id="nacionalidade">${autor.nacionalidade}</textarea>
                   </div>
                   <button type="submit" class="btn btn-primary mt-2">Salvar</button>
               </form>
