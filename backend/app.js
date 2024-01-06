@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const tarefasRouter = require('./controllers/TarefaController');
-const loginRouter = require('./controllers/LoginController');
+const LivrosController = require('./controllers/LivrosController');
+const AutoresController = require('./controllers/AutoresController');
 
 // Cria uma instância do servidor Express.
 const app = express();
@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(cors());
 
 // Define a rota "/tarefas" e associa ao router importado.
-app.use("/tarefas", tarefasRouter);
-app.use("/login", loginRouter);
+app.use("/livros", LivrosController);
+app.use("/autores", AutoresController);
 
 // Define a porta do servidor, com um fallback para a porta 3000 se não estiver definida.
 const PORT = process.env.PORT || 3000;

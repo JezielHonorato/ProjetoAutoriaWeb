@@ -1,4 +1,5 @@
-import tarefaController from "../js/controller/TarefaController.js";
+import livroController from "../js/controller/livroController.js";
+import autorController from "../js/controller/autorController.js";
 import loginController from "../js/controller/LoginController.js";
 
 // Função auxiliar para selecionar elementos no DOM.
@@ -33,7 +34,7 @@ function esconderConteudoPrincipal() {
   localStorage.removeItem('token');
   $('#login').style.display = 'flex';
   $('#app').style.display = 'none';
-  $("#usuario").value = "";
+  $("#autor").value = "";
   $("#senha").value = "";
 }
 
@@ -41,14 +42,24 @@ function esconderConteudoPrincipal() {
 document.addEventListener('DOMContentLoaded', verificarLogin);
 
 // Adiciona ouvintes de eventos para itens de menu.
-$("#tarefa").addEventListener("click", function() {
+$("#cadastrar_livro").addEventListener("click", function() {
   fecharNavBar();
-  tarefaController.renderizarTarefaFormulario(componentePrincipal);
+  livroController.renderizarLivroFormulario(componentePrincipal);
 });
 
-$("#lista_tarefas").addEventListener("click", function() {
+$("#listar_livro").addEventListener("click", function() {
   fecharNavBar();
-  tarefaController.renderizarListaTarefas(componentePrincipal);
+  livroController.renderizarListaLivro(componentePrincipal);
+});
+
+$("#cadastrar_autor").addEventListener("click", function() {
+  fecharNavBar();
+  autorController.renderizarAutorFormulario(componentePrincipal);
+});
+
+$("#listar_autor").addEventListener("click", function() {
+  fecharNavBar();
+  autorController.renderizarListaAutor(componentePrincipal);
 });
 
 // Adiciona ouvinte de evento para o formulário de login.

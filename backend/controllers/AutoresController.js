@@ -10,7 +10,7 @@ const verificarToken = require('../util/VerificaToken');
  * @param {Object} res - O objeto de resposta do Express.
  * @param {string} erroMsg - Mensagem de erro para ser enviada em caso de falha.
  */
-function executarConsulta(sql, params, res, erroMsg) {
+function executarComandoSQL(sql, params, res, erroMsg) {
   db.query(sql, params, (err, result) => {
     if (err) {
       res.status(500).json({ erro: erroMsg, detalhes: err });
@@ -20,33 +20,28 @@ function executarConsulta(sql, params, res, erroMsg) {
   });
 }
 
-// Rota para buscar todas as tarefas
 router.get('/', (req, res) => {
-  executarConsulta('SELECT * FROM tarefa', [], res, "Erro na consulta de tarefas");
+  executarComandoSQL('SELECT * FROM autores', [], res, "Erro na consulta de autores");
 });
 
-// Rota para buscar uma tarefa específica
 router.get("/:id", (req, res) => {
   const id = req.params.id;
-  executarConsulta('SELECT * FROM tarefa WHERE id = ?', [id], res, "Erro na consulta de tarefa");
+  executarComandoSQL('SELECT * FROM autores WHERE id = ?', [id], res, "Erro na consulta de autores");
 });
 
-// Rota para criar uma nova tarefa
 router.post('/', (req, res) => {
-  const { titulo, descricao } = req.body;
-  executarConsulta('INSERT INTO tarefa (titulo, descricao) VALUES (?, ?)', [titulo, descricao], res, "Erro no cadastro de tarefa!");
+  const { autor, nascimento, nacionalidade } = req.body;
+  executarComandoSQL('INSERT INTO autores (autor, nascimento, nacionalidade) VALUES ( ?, ?, ?)', [autor, nascimento, nacionalidade], res, "Erro no cadastro de autor!");
 });
 
-// Rota para deletar uma tarefa
 router.delete("/:id", (req, res) => {
-  const tarefaId = req.params.id;
-  executarConsulta('DELETE FROM tarefa WHERE id = ?', [tarefaId], res, 'Erro ao deletar tarefa');
+  const id = req.params.id;
+  executarComandoSQL('DELETE FROM usuario WHERE id = ?', [id], res, 'Erro ao deletar autor');
 });
 
-// Rota para atualizar uma tarefa
 router.put('/', (req, res) => {
-  const { id, titulo, descricao } = req.body;
-  executarConsulta('UPDATE tarefa SET titulo = ?, descricao = ? WHERE id = ?', [titulo, descricao, id], res, "Erro ao atualizar tarefa");
+  const { id, autor, nascimento, nacionalidade } = req.body;
+  executarComandoSQL('UPDATE autores SET autor = ?, nascimento = ?, nacionalidade = ? WHERE id = ?', [autor, nascimento, nacionalidade, id], res, "Erro ao atualizar autor");
 });
 
 module.exports = router;
